@@ -25,7 +25,6 @@ export class Form<T extends IForm = IForm> extends Component<T> {
       event.preventDefault();
       this.events.emit(`${formName}:submit`);
     });
-
     this.container.addEventListener("input", (event: Event) => {
       const target = event.target as HTMLInputElement;
       this.events.emit(`${formName}:change`, {
